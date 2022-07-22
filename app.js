@@ -1,19 +1,4 @@
-function start(){
-
-//MOVE LIST 
-let move1 = "Headbutt"
-let move2 = "Fly"
-let move3 = "Gust"
-let move4 = "Whirlwind"
-document.getElementById(
-    "move-list"
-    ).innerHTML =`<li>${move1}</li><li>${move2}</li><li>${move3}</li><li>${move4}</li>`
-
-const requestURL = "https://pokeapi.co/api/v2/pokemon/charmander"
-//JAVASCRIPT PROMISES 
-fetch(requestURL)
-.then((x) => x.json())
-.then((obj) => { 
+function displayPokemon(obj){ 
 const name = obj.name;
 const pokemonNameMessage = "Pokemon Name: " + name;
 document.getElementById("name").innerHTML = pokemonNameMessage
@@ -31,7 +16,17 @@ document.getElementById(
     "move-list"
     ).innerHTML =`<li>${move1}</li><li>${move2}</li><li>${move3}</li><li>${move4}</li>`
 
+};
 
+
+function fetchPokemon() { 
+const requestURL = "https://pokeapi.co/api/v2/pokemon/";
+const searchTerm= document.getElementById("search-box").value;
+console.log(requestURL +searchTerm);
+fetch(requestURL + searchTerm)
+.then((x) => x.json())
+.then((obj) => { 
+    displayPokemon(obj);
 });
 
 } 

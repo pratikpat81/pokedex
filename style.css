@@ -1,0 +1,38 @@
+.move-list{
+    margin:0;
+    padding:0;
+    border-radius: 16px;
+}
+
+
+
+.move-list li{ 
+    background-color:beige;
+    list-style:none;
+    padding:4px;
+
+}
+
+body{
+    background-color: bisque;
+}
+
+.image { 
+    background-color: cadetblue;
+    padding: 8px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container{ 
+    display: flex;
+    flex-direction: row;
+}
+
